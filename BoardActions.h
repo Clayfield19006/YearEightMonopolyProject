@@ -50,10 +50,10 @@ void SetupAction(int index, int amount, string *lineOne, string *lineTwo, string
 
 void SetupActions()
 {
-    SetupAction(0, +100, "Your houses'", "lockers are", "the tidiest!");
+    SetupAction(0, +100, "Your house", "lockers are", "the tidiest!");
     SetupAction(1, -100, "Taking bags", "to class? You", "know better.");
     SetupAction(2, -200, "You know not", "to leave your", "locker open.");
-    SetupAction(3, +300, "Offering to", "clean lockers", " at lunch!");
+    SetupAction(3, +300, "Offering to", "clean lockers", "at lunch!");
     SetupAction(4, +200, "Cleaning up", "the litter of", "other people.");
     SetupAction(5, +100, "You become", "a peer mentor", "");
     SetupAction(6, +200, "You are a", "buddy to new", "students.");
