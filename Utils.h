@@ -37,7 +37,7 @@ void DisplayLines(string *lineOne, string* lineTwo, string *lineThree, int amoun
 	{
 		displayBigTextLine(11, "Lose $%u", abs(amount)); // absolute (abs) removes the sign (+ or -) from the integer
 		setLEDColor(ledRedFlash);
-		wait1Msec(1000);
+		wait1Msec(2000);
 		setLEDColor(ledOff);
 	}
 
@@ -51,7 +51,7 @@ void DisplayLines(string *lineOne, string* lineTwo, string *lineThree, int amoun
 	{
 		displayBigTextLine(11, "Earn $%u", amount);
 		setLEDColor(ledGreenFlash);
-		wait1Msec(1000);
+		wait1Msec(2000);
 		setLEDColor(ledOff);
 	}
 }
