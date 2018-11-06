@@ -80,7 +80,7 @@ void SetupChanceActions()
     SetupChance(1, -250, "Uh-oh! You", "forgot your", "ribbon!");
     SetupChance(2, -100, "Oops! You", "forgot your", "HPE uniform");
     SetupChance(3, +250, "Get a half", "pocket for", "sports.");
-    SetupChance(4, -200, "Your team", "beats BGGS", "in your game.");
+    SetupChance(4, +200, "Your team", "beats BGGS", "in your game.");
     SetupChance(5, +200, "You win a", "speaking", "contest! WOW!");
     SetupChance(6, +200, "You are", "chosen as", "house leader!");
     SetupChance(7, +200, "You perform", "well in your", "Maths exam!");
