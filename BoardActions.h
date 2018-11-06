@@ -58,7 +58,7 @@ void SetupActions()
     SetupAction(5, +100, "You become", "a peer mentor", "");
     SetupAction(6, +200, "You are a", "buddy to new", "students.");
     SetupAction(7, -150, "You've lost", "your hat,", "again.");
-    SetupAction(8, -200, "Littering in", "the lockers! That", "isn't allowed.");
+    SetupAction(8, -200, "Littering in", "the lockers", "isn't allowed.");
     SetupAction(9, +200, "You help out", "at the house", "tuckshop!");
 }
 

@@ -11,6 +11,8 @@
 // ************************************************************
 
 #pragma DebuggerWindows("debugStream")
+#pragma DebuggerWindows("globals")
+#pragma DebuggerWindows("EV3LCDScreen")
 
 #include "BoardActions.h"
 #include "Utils.h"
@@ -43,11 +45,15 @@ task main()
 	// Turn off brick LED so that it will flash during game play
 	setLEDColor(ledOff);
 
-	while (true)
+	while (gNoOfThrows < 25)
 	{
 		// Press the left button for game play
 		if (SensorValue(leftTouch) == 1)
 		{
+			// Turn off any LED activity
+			setLEDColor(ledOff);
+
+			// Increment the total number of throws
 			gNoOfThrows++;
 
 			DisplayLines("*Rolling Dice*", "", "", 0);
@@ -125,14 +131,27 @@ task main()
 		// Press the right button for game statistics
 		if (SensorValue(rightTouch) == 1)
 		{
-			// Display the game statistics to the user
+			// Turn off any LED activity
+			setLEDColor(ledOff);
+
 			string balance;
 			sprintf(balance, "Balance: $%-d", gCashOnHand);
 			string throws;
 			sprintf(throws, "Throws: %d", gNoOfThrows);
 
 			DisplayLines(balance, throws, "", 0);
-
 		} // end rightTouch
-	} // end true
+	} // end gNoOfThrows < 26
+
+	// End of game
+	string balance;
+	sprintf(balance, "Balance: $%-d", gCashOnHand);
+	string throws;
+	sprintf(throws, "Throws: %d", gNoOfThrows);
+	DisplayLines("  Game Over!!!", balance, throws, 0);
+	writeDebugStreamLine("Game Over: %s, Throws %d", balance, gNoOfThrows);
+	setLEDColor(ledOrangePulse);
+	playSound(soundDownwardTones);
+	waitForButtonPress()
+
 } // end main
